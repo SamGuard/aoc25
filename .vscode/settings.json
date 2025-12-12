@@ -5,5 +5,9 @@
         "editor.detectIndentation": false
     },
     "C_Cpp.clang_format_style": "file",
-    "editor.formatOnSave": true
+    "C_Cpp.clang_format_fallbackStyle": "none",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "C_Cpp.formatting": "clangFormat"
 }
