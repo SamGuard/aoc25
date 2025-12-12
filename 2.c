@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <math.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_IN_SIZE 2048
 #define MAX_SPLITS 64
@@ -21,9 +21,7 @@ uint64_t powi(uint64_t a, uint64_t b) {
     return ret;
 }
 
-uint64_t calc_num_digits(uint64_t num) {
-    return (uint64_t)floor(log10((double) (num)) + 1.0);
-}
+uint64_t calc_num_digits(uint64_t num) { return (uint64_t)floor(log10((double)(num)) + 1.0); }
 
 uint64_t split_num(uint64_t num, uint64_t splits_out[static MAX_SPLITS], int num_splits) {
     uint64_t digits, right, pow;
@@ -113,12 +111,12 @@ void run_through(char *input) {
         }
 
         tok_count++;
-    } while((str = strtok(NULL, "-,")) != NULL);
+    } while ((str = strtok(NULL, "-,")) != NULL);
 
     printf("Score: %lu, Score2: %lu\n", score, score2);
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     char fname[256];
     char *in_buff;
     FILE *f;
@@ -132,13 +130,13 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    in_buff = (char *)malloc(sizeof (char) * MAX_IN_SIZE);
+    in_buff = (char *)malloc(sizeof(char) * MAX_IN_SIZE);
     if (in_buff == NULL) {
         printf("Failed to alloc memory\n");
         return -1;
     }
 
-    snprintf(fname, sizeof (fname), "./in/%s", argv[1]);
+    snprintf(fname, sizeof(fname), "./in/%s", argv[1]);
     f = fopen(fname, "r");
     if (f == NULL) {
         printf("File not found\n");

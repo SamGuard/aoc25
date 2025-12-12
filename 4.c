@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <math.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_GRID_SIZE (256 * 256)
 #define MAX_IN_SIZE 256
@@ -46,7 +46,7 @@ uint64_t run_through2(const char grid_in[static MAX_GRID_SIZE], int width, int h
     uint64_t score = 0;
     int is_same;
 
-    memcpy(grid, grid_in, sizeof (grid));
+    memcpy(grid, grid_in, sizeof(grid));
 
     do {
         is_same = TRUE;
@@ -67,13 +67,12 @@ uint64_t run_through2(const char grid_in[static MAX_GRID_SIZE], int width, int h
     return score;
 }
 
-
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     char fname[256];
     char *in_buff;
     FILE *f;
     uint64_t score = 0, score2 = 0;
-    char grid[MAX_GRID_SIZE] = {0};
+    char grid[MAX_GRID_SIZE] = { 0 };
     int width = -1, row = 0;
 
     if (argc < 2) {
@@ -81,20 +80,20 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    in_buff = (char *)malloc(sizeof (char) * MAX_IN_SIZE);
+    in_buff = (char *)malloc(sizeof(char) * MAX_IN_SIZE);
     if (in_buff == NULL) {
         printf("Failed to alloc memory\n");
         return -1;
     }
 
-    snprintf(fname, sizeof (fname), "./in/%s", argv[1]);
+    snprintf(fname, sizeof(fname), "./in/%s", argv[1]);
     f = fopen(fname, "r");
     if (f == NULL) {
         printf("File not found\n");
         return -1;
     }
 
-    while(fgets(in_buff, MAX_IN_SIZE, f) != NULL) {
+    while (fgets(in_buff, MAX_IN_SIZE, f) != NULL) {
         int n = strnlen(in_buff, MAX_IN_SIZE);
         if (!n) {
             break;

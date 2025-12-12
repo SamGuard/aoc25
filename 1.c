@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     char fname[256];
     char in_buff[256];
 
@@ -11,12 +11,12 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    snprintf(fname, sizeof (fname), "./in/%s", argv[1]);
-    FILE* f = fopen(fname, "r");
+    snprintf(fname, sizeof(fname), "./in/%s", argv[1]);
+    FILE *f = fopen(fname, "r");
 
     int dial = 50, score = 0;
 
-    while (fgets(in_buff, sizeof (in_buff), f) != NULL) {
+    while (fgets(in_buff, sizeof(in_buff), f) != NULL) {
         int n = strlen(in_buff);
         if (!n) {
             break;
