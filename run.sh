@@ -7,5 +7,6 @@ in=$2
 
 # Make the bin
 gcc -o "bin/$day" "./$day.c" -Wall -Wextra -lm -g
+# gcc -o "bin/$day" "./$day.c" -Wall -Wextra -lm -g -O3
 
 ./bin/"$day" "$in"
